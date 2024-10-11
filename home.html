@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SBA 308A - Web App</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script defer src="./app.js"></script>
+    <script type="module" defer src="./app.js"></script>
+    <script type="module" defer src="./aniDb.js"></script>
+    <script type="module" defer src="./bookmark.js"></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!-- Navbar -->
+
     <!-- food gallery pics -->
-    <section class="food-gallery"></section>
+    <section id="food-section">
+      <div id="search-bar"></div>
+      <div class="foody-gallery"></div>
+    </section>
+
+    <!-- footer -->
   </body>
 </html>

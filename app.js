@@ -1,14 +1,13 @@
-console.log("hello world");
-const url = "";
-const API_KEY = "";
+/**
+ *
+ * main application
+ *
+ */
+import * as aniDB from "./aniDb.js";
 
-async function getData() {
-  const foodData = await axios
-    .get(url)
-    .then((response) => {
-      console.log(response.data); // Handle the data
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
-}
+console.log("hello world");
+const url = `https://api.jikan.moe/v4/anime?genres=1&limit=8`;
+const searchBar = document.getElementById("search-bar");
+const foodGallery = document.querySelector(".food-gallery");
+
+aniDB.fetchData(url);

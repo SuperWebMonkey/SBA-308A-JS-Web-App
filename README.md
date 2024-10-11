@@ -1,6 +1,6 @@
 # Food API Project
 
-This project will take a food api and populate into the page
+This project will take a food api and populate the data into the page
 
 # requirements
 
