@@ -21,6 +21,7 @@ body {
 #logo {
   height: 50px;
   width: auto;
+  border-radius: "50%";
 }
 
 /* food gallery */
@@ -28,6 +29,14 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
   background-color: antiquewhite;
+}
+
+.foody-gallery img {
+  width: 100%; /* Make the image take the full width of the container */
+  height: auto; /* Maintain the aspect ratio */
+  max-width: 150px; /* Set maximum width (adjust as needed) */
+  max-height: 150px; /* Set maximum height (adjust as needed) */
+  object-fit: cover; /* Ensure the image covers the entire area without distortion */
 }
 
 /* Search Bar */

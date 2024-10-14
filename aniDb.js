@@ -11,18 +11,42 @@
 export async function fetchData(url) {
   console.log("Retrieving the data");
   try {
-    const actionResponse = await axios.get(url);
-    console.log(actionResponse.data);
+    const storage = await axios.get(url);
+    // console.log(storage.data.products);
+    return storage;
   } catch (e) {
     console.log("Error:", e);
     console.log("Fetching the data has failed.");
   }
+  return;
 }
 
-// put it into a retrievable ds
-export async function populateGallery(ary) {
-  for (let i = 0; i < ary.length; i++) {}
+// Populate the gallery
+export async function populateGallery(itemAry) {
+  const gallery = document.querySelector(".foody-gallery");
+  console.log(gallery);
+
+  for (let i = 0; i < itemAry.length; i++) {
+    const item = document.createElement("div");
+    item.classList.add("item-box");
+
+    const img = document.createElement("img");
+    console.log(itemAry[i].images[1]);
+    img.src = itemAry[i].images[1];
+    img.alt = "item image";
+    item.appendChild(img);
+
+    const ul = document.createElement("ul");
+    ul.textContent = itemAry[i].title;
+    item.appendChild(ul);
+
+    const p = document.createElement("p");
+    p.textContent = itemAry[i].description;
+    item.appendChild(p);
+
+    gallery.appendChild(item);
+  }
 }
 
-// show all anime/movies
-export async function showAll(ary) {}
+// Show all items
+export async function search(name, ary) {}
