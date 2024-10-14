@@ -1,3 +1,4 @@
+/* General Styling */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,6 +26,10 @@ body {
 }
 
 /* food gallery */
+#store-title {
+  text-align: center;
+}
+
 #food-section {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -36,7 +41,18 @@ body {
   height: auto; /* Maintain the aspect ratio */
   max-width: 150px; /* Set maximum width (adjust as needed) */
   max-height: 150px; /* Set maximum height (adjust as needed) */
-  object-fit: cover; /* Ensure the image covers the entire area without distortion */
+  /* object-fit: cover;  */
+}
+
+.item-box {
+  border: 2px solid black;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  padding-left: 8px;
+  padding-bottom: 10px;
 }
 
 /* Search Bar */

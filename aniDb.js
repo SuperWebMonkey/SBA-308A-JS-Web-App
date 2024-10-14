@@ -30,18 +30,20 @@ export async function populateGallery(itemAry) {
     const item = document.createElement("div");
     item.classList.add("item-box");
 
+    const ul = document.createElement("ul");
+    ul.textContent = itemAry[i].title;
+    ul.style.fontWeight = "bold";
+    item.appendChild(ul);
+
     const img = document.createElement("img");
-    console.log(itemAry[i].images[1]);
+    // console.log(itemAry[i].images[1]);
     img.src = itemAry[i].images[1];
     img.alt = "item image";
     item.appendChild(img);
 
-    const ul = document.createElement("ul");
-    ul.textContent = itemAry[i].title;
-    item.appendChild(ul);
-
     const p = document.createElement("p");
     p.textContent = itemAry[i].description;
+    p.style.fontStyle = "italic";
     item.appendChild(p);
 
     gallery.appendChild(item);
