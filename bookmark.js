@@ -4,4 +4,8 @@
  *
  */
 
-export async function bookmark() {}
+export async function bookmark() {
+  let responseAry = [];
+  let bmAry = [];
+  for (let i = 0; i < responseAry.length; i++) {}
+}

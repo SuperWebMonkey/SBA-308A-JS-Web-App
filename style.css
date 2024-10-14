@@ -23,8 +23,13 @@ body {
   width: auto;
 }
 
-/* Search Bar */
-
 /* food gallery */
+#food-section {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: antiquewhite;
+}
+
+/* Search Bar */
 
 /* footer */
