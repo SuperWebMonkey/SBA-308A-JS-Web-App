@@ -23,8 +23,9 @@ export async function fetchData(url) {
 
 // Populate the gallery
 export async function populateGallery(itemAry) {
+  clear();
   const gallery = document.querySelector(".foody-gallery");
-  console.log(gallery);
+  // console.log(gallery);
 
   for (let i = 0; i < itemAry.length; i++) {
     const item = document.createElement("div");
@@ -46,7 +47,24 @@ export async function populateGallery(itemAry) {
     p.style.fontStyle = "italic";
     item.appendChild(p);
 
+    const favButton = document.createElement("button");
+    favButton.textContent = "fav";
+    item.appendChild(favButton);
+
     gallery.appendChild(item);
+  }
+}
+
+export function clear() {
+  const gallery = document.querySelector(".foody-gallery");
+  // console.log(gallery);
+
+  if (gallery.childNodes.length === 0) {
+    return;
+  } else {
+    while (gallery.firstChild) {
+      gallery.removeChild(gallery.firstChild);
+    }
   }
 }
 
