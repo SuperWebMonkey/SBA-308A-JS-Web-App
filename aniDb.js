@@ -23,11 +23,29 @@ export async function fetchData(url) {
   return;
 }
 
+// Show error when no characters match the items in the search bar
+function showError(gallery) {
+  // console.log("reached");
+  const item = document.createElement("div");
+  item.classList.add("item-box");
+
+  const h2 = document.createElement("h2");
+  h2.textContent = "No item contains those characters";
+  h2.style.color = "red";
+  item.appendChild(h2);
+
+  gallery.appendChild(item);
+}
+
 // Populate the gallery
 export async function populateGallery(itemAry) {
   clear();
   const gallery = document.querySelector(".foody-gallery");
   // console.log(gallery);
+
+  if (itemAry.length === 0) {
+    showError(gallery);
+  }
 
   for (let i = 0; i < itemAry.length; i++) {
     const item = document.createElement("div");
