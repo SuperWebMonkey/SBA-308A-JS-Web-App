@@ -25,11 +25,49 @@ body {
   border-radius: "50%";
 }
 
-/* food gallery */
+/* 
+  ----- Food Section ------
+*/
+
+/* Store Title */
 #store-title {
   text-align: center;
 }
 
+/* search bar */
+#sb-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0px 10px 0px; /* top, right, bottom, left*/
+}
+
+#search-bar {
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 400px;
+  outline: none;
+  border-radius: 50px 0 0 50px; /* Rounded corners */
+  transition: all 0.3s ease;
+}
+
+.icon-container {
+  background-color: lightslategray; /* Match the icon color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 0 50px 50px 0; /* Rounded corners */
+  height: 100%;
+}
+
+.search-icon {
+  color: white; /* Icon color */
+  font-size: 20px; /* Adjust icon size */
+}
+
+/* food gallery */
 #food-section {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -54,7 +92,5 @@ body {
   padding-left: 8px;
   padding-bottom: 10px;
 }
-
-/* Search Bar */
 
 /* footer */

@@ -14,4 +14,6 @@ export async function bookmark(ary, fav) {
 
 export function createItem() {}
 
-export function showFav() {}
+export function addBookmark() {}
+
+export function showBookmarks() {}

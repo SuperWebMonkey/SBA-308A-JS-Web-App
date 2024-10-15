@@ -7,6 +7,8 @@
  *
  */
 
+import * as bookmark from "./bookmark.js";
+
 // fetch the data
 export async function fetchData(url) {
   console.log("Retrieving the data");
@@ -47,9 +49,16 @@ export async function populateGallery(itemAry) {
     p.style.fontStyle = "italic";
     item.appendChild(p);
 
-    const favButton = document.createElement("button");
-    favButton.textContent = "fav";
-    item.appendChild(favButton);
+    const bmButton = document.createElement("button");
+    bmButton.textContent = "bookmark";
+    bmButton.className = "bookmark";
+    item.appendChild(bmButton);
+
+    bmButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("clicked");
+      bookmark.addBookmark();
+    });
 
     gallery.appendChild(item);
   }
@@ -67,6 +76,3 @@ export function clear() {
     }
   }
 }
-
-// Show all items
-export async function search(name, ary) {}
