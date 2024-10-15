@@ -1,19 +1,84 @@
 /**
  *
- * Bookmarks/favorites the image into the
+ * Bookmarks/favorite the item
  *
  */
 
-//
-const foodGalleryEl = document.querySelector(".food-gallery");
-const bmList = [];
+import * as aniDB from "./aniDb.js";
 
-export async function bookmark(ary, fav) {
-  for (let i = 0; i < ary.length; i++) {}
+const foodGalleryEl = document.querySelector(".food-gallery");
+const bmUrl = `https://dummyjson.com/products/add`;
+let bmList = [];
+
+function noBookmarks() {
+  const gallery = document.querySelector(".foody-gallery");
+  // console.log("reached");
+  const item = document.createElement("div");
+  item.classList.add("item-box");
+
+  const h2 = document.createElement("h2");
+  h2.textContent = "Book Marks is Empty";
+  h2.style.color = "white";
+  item.appendChild(h2);
+
+  gallery.appendChild(item);
 }
 
-export function createItem() {}
+// use post
+export async function addBookmark(item) {
+  const inList = bmList.some((obj) => obj.title === item.title);
+  if (!inList) {
+    const newItem = createItem(item);
+    console.log(newItem);
+    const dummyPost = await postItem(newItem);
+    console.log("post list:", dummyPost);
+    dummyPost.img = item.images[1];
+    bmList.push(dummyPost);
+  }
 
-export function addBookmark() {}
+  console.log(bmList);
+}
 
-export function showBookmarks() {}
+function createItem(item) {
+  return {
+    id: item.id,
+    title: item.title,
+    img: item.images[1],
+    description: item.description,
+  };
+}
+
+// Post the newly created object to add of dummyjson
+async function postItem(obj) {
+  const data = await fetch(bmUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      id: obj.id,
+      title: obj.title,
+      img: obj.img,
+      description: obj.description,
+    }),
+  }).then((res) => res.json());
+
+  return data;
+}
+
+// use delete
+export async function removeBookmark(item) {
+  bmList.forEach((bmItem, index) => {
+    if (bmItem.title === item.title) {
+      bmList.splice(index, 1);
+    }
+  });
+
+  console.log(bmList);
+}
+
+export async function showBookmarks() {
+  if (bmList.length !== 0) {
+    await aniDB.populateGallery(bmList);
+  } else {
+    noBookmarks();
+  }
+}

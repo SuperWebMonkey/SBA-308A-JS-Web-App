@@ -74,8 +74,10 @@ export async function populateGallery(itemAry) {
 
     bmButton.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log("clicked");
-      bookmark.addBookmark();
+      // console.log("clicked");
+      alert("item added to bookmark");
+      console.log(itemAry[i]);
+      bookmark.addBookmark(itemAry[i]);
     });
 
     gallery.appendChild(item);
