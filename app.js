@@ -49,22 +49,14 @@ async function main() {
   wishlist.addEventListener("click", (e) => {
     e.preventDefault();
     alert("clicked");
+    bookmark.showBookmarks();
   });
 }
 
 // main function
 main();
 
-// events
+// events - not loading
 document.addEventListener("DOMContentLoaded ", () => {
   console.log("DOM loading");
-  // Add event listener to search bar
-  //   searchBar.addEventListener("input", (e) => {
-  //     e.preventDefault();
-  //     const searchTerm = e.target.value; //searchBar.value;
-  //     console.log("search term", searchTerm);
-  //     // const storageList = await aniDB.fetchData(url);
-  //     // const allItems = storageList.data.products;
-  //     // searchFilter(searchTerm, allItems); // Call filter function on input
-  //   });
 });

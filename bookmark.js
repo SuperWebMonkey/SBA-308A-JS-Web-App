@@ -11,6 +11,7 @@ const bmUrl = `https://dummyjson.com/products/add`;
 let bmList = [];
 
 function noBookmarks() {
+  aniDB.clear();
   const gallery = document.querySelector(".foody-gallery");
   // console.log("reached");
   const item = document.createElement("div");
@@ -18,7 +19,7 @@ function noBookmarks() {
 
   const h2 = document.createElement("h2");
   h2.textContent = "Book Marks is Empty";
-  h2.style.color = "white";
+  h2.style.color = "red";
   item.appendChild(h2);
 
   gallery.appendChild(item);
@@ -32,7 +33,10 @@ export async function addBookmark(item) {
     console.log(newItem);
     const dummyPost = await postItem(newItem);
     console.log("post list:", dummyPost);
-    dummyPost.img = item.images[1];
+    dummyPost.images = [];
+    dummyPost.images.push("random image data");
+    dummyPost.images.push(item.images[1]);
+    console.log(dummyPost.img);
     bmList.push(dummyPost);
   }
 
@@ -43,7 +47,7 @@ function createItem(item) {
   return {
     id: item.id,
     title: item.title,
-    img: item.images[1],
+    // img: item.images[1],
     description: item.description,
   };
 }
