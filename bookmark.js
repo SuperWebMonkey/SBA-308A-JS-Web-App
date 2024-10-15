@@ -6,7 +6,6 @@
 
 import * as aniDB from "./aniDb.js";
 
-const foodGalleryEl = document.querySelector(".food-gallery");
 const bmUrl = `https://dummyjson.com/products/add`;
 let bmList = [];
 
@@ -32,11 +31,11 @@ export async function addBookmark(item) {
     const newItem = createItem(item);
     console.log(newItem);
     const dummyPost = await postItem(newItem);
-    console.log("post list:", dummyPost);
+    // console.log("post list:", dummyPost);
     dummyPost.images = [];
     dummyPost.images.push("random image data");
     dummyPost.images.push(item.images[1]);
-    console.log(dummyPost.img);
+    // console.log(dummyPost.img);
     bmList.push(dummyPost);
   }
 

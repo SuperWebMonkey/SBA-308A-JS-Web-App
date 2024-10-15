@@ -11,10 +11,6 @@ const url = `https://dummyjson.com/products/category/smartphones`;
 const searchBar = document.getElementById("search-bar");
 const wishlist = document.querySelector(".wishlist");
 
-function useBookmark() {
-  bookmark.showBookmarks();
-}
-
 async function searchFilter(title, allItems) {
   let filteredItems = [];
 
