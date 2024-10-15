@@ -68,7 +68,7 @@ export async function populateGallery(itemAry) {
     item.appendChild(p);
 
     const bmButton = document.createElement("button");
-    bmButton.textContent = "bookmark";
+    bmButton.textContent = "wishlist";
     bmButton.className = "bookmark";
     item.appendChild(bmButton);
 

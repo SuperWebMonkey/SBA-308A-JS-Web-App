@@ -9,7 +9,7 @@ import * as bookmark from "./bookmark.js";
 console.log("Starting the application");
 const url = `https://dummyjson.com/products/category/smartphones`;
 const searchBar = document.getElementById("search-bar");
-const bmEl = document.querySelector(".bookmark");
+const wishlist = document.querySelector(".wishlist");
 
 function useBookmark() {
   bookmark.showBookmarks();
@@ -44,6 +44,11 @@ async function main() {
     const searchTerm = e.target.value; //searchBar.value;
     // console.log("search term", searchTerm);
     await searchFilter(searchTerm, allItems); // Call filter function on input
+  });
+
+  wishlist.addEventListener("click", (e) => {
+    e.preventDefault();
+    alert("clicked");
   });
 }
 
