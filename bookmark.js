@@ -62,7 +62,11 @@ async function postItem(obj) {
       img: obj.img,
       description: obj.description,
     }),
-  }).then((res) => res.json());
+  })
+    .then((res) => res.json())
+    .catch((e) => {
+      console.log("Error:", e);
+    });
 
   return data;
 }
@@ -81,7 +85,20 @@ export async function removeBookmark(item) {
 export async function showBookmarks() {
   if (bmList.length !== 0) {
     await aniDB.populateGallery(bmList);
+    // addTrashBtns();
   } else {
     noBookmarks();
+  }
+}
+
+// Add a trash button
+export async function addTrashBtns() {
+  const gallery = document.querySelector(".foody-gallery");
+  for (let i = 0; i < bmList.length; i++) {
+    const item = gallery.children[i];
+    const trashBtn = document.createElement("button");
+    trashBtn.textContent = "trash";
+    trashBtn.className = "trash";
+    item.appendChild(trashBtn);
   }
 }

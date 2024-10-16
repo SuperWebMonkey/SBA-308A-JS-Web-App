@@ -1,6 +1,6 @@
 /* General Styling */
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   margin: 0;
   padding: 0;
 }
@@ -43,6 +43,7 @@ p {
 #navbar {
   overflow: hidden;
   background-color: var(--nav-bg);
+  /* width: 100%; */
 }
 
 #navbar .page {
@@ -109,7 +110,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  text-align: center;
+  padding: 15px;
   border-radius: 0 50px 50px 0; /* Rounded corners */
   height: 100%;
 }
@@ -127,23 +129,44 @@ p {
   padding-bottom: 10px;
 }
 
+.foody-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .foody-gallery img {
   width: 100%; /* Make the image take the full width of the container */
   height: auto; /* Maintain the aspect ratio */
-  max-width: 150px; /* Set maximum width (adjust as needed) */
+  max-width: 150px; /* Previously 150px. Set maximum width (adjust as needed) */
   max-height: 150px; /* Set maximum height (adjust as needed) */
   /* object-fit: cover;  */
 }
 
 .item-box {
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-content: center; */
+  flex: 1 0 33%;
+  align-items: center;
+  height: 300px;
+  width: 150px;
   border: 2px solid black;
   box-sizing: border-box;
   background-color: whitesmoke;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
   margin-bottom: 15px;
   padding-left: 8px;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
+}
+
+.item-box button {
+  width: 70px;
+  background-color: white;
 }
 
 /* footer */

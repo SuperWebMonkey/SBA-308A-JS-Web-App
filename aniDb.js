@@ -3,7 +3,6 @@
  * @param {*} url
  *
  * Use dummy json in case this doesn't work: https://dummyjson.com/docs
- * The api that is use is jikan.moe: https://jikan.moe/ - not using
  *
  */
 

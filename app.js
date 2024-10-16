@@ -3,6 +3,7 @@
  * main application
  *
  */
+
 import * as aniDB from "./aniDb.js";
 import * as bookmark from "./bookmark.js";
 
@@ -10,6 +11,7 @@ console.log("Starting the application");
 const url = `https://dummyjson.com/products/category/smartphones`;
 const searchBar = document.getElementById("search-bar");
 const wishlist = document.querySelector(".wishlist");
+const trash = document.querySelector(".trash");
 
 async function searchFilter(title, allItems) {
   let filteredItems = [];
@@ -47,12 +49,18 @@ async function main() {
     alert("clicked");
     bookmark.showBookmarks();
   });
+
+  // trash.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   alert("clicked");
+  //   // removeBookmark();
+  // });
 }
 
 // main function
 main();
 
-// events - not loading
+// events - DOMContentLoaded not loading
 document.addEventListener("DOMContentLoaded ", () => {
   console.log("DOM loading");
 });
